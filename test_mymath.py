@@ -8,6 +8,8 @@ def test_fact3():
     assert fact(2) == 2
 def test_fact4():
     assert fact(10) == 3628800
+def test_fact5():
+    assert fact(-12) == -1
 
 def test_inc1():
     assert inc(0) == 1
