@@ -5,9 +5,14 @@ python:
     - "3.5"
     - "3.6"
 
+addons:
+  apt:
+    packages:
+      - opam
+
 install:
   - pip install -r requirements.txt
-  - apt-get install opam && opam switch 4.06.1
+  - opam switch 4.06.1
   - opam install lwt.unix
   - opam install lwt.ppx
   - opam install re.pcre
