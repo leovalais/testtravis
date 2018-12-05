@@ -3,21 +3,17 @@ python:
     - "2.7"
     - "3.5"
     - "3.6"
-job:
-  include:
-    - stage: test
-      install: true
-      script: pytest
-    - stage: deploy
-      install: git clone https://github.com/ocsigen/html_of_wiki && make -C html_of_wiki ohow
-      script: cp -r doc _doc && find _doc -name '*.wiki' -exec ./html_of_wiki/ohow.byte {} \; -exec rm {} \;
-    - stage: deploy
-      install: true
-      script: true
-      deploy:
-        provider: pages
-        keep-history: true
-        skip-cleanup: true
-        github-token: $GITHUB_TOKEN
-        on:
-          branch: master
+install:
+  - pip install --user -r requirements.txt
+  - git clone https://github.com/ocsigen/html_of_wiki && make -C html_of_wiki ohow
+script:
+  - pytest
+  - ./mkdoc.sh
+deploy:
+  provider: pages
+  keep-history: true
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN
+  local-dir: _doc
+  on:
+    branch: master
