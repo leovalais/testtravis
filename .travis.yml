@@ -9,6 +9,7 @@ addons:
   apt:
     packages:
       - opam
+      - ocaml
 
 install:
   - pip install -r requirements.txt
