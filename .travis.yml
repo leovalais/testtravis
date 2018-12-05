@@ -9,8 +9,8 @@ job:
       install: true
       script: pytest
     - stage: deploy
-      install: "git clone https://github.com/ocsigen/html_of_wiki && make -C html_of_wiki ohow"
-      script: "cp -r doc _doc && find _doc -name '*.wiki' -exec ./html_of_wiki/ohow.byte {} \; -exec rm {} \;"
+      install: git clone https://github.com/ocsigen/html_of_wiki && make -C html_of_wiki ohow
+      script: cp -r doc _doc && find _doc -name '*.wiki' -exec ./html_of_wiki/ohow.byte {} \; -exec rm {} \;
     - stage: deploy
       install: true
       script: true
