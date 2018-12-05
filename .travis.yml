@@ -3,5 +3,18 @@ python:
     - "2.7"
     - "3.5"
     - "3.6"
-script:
-    - pytest
+job:
+  include:
+    - stage: test
+      script: pytest
+    - stage: wikidoc
+      install: git clone https://github.com/ocsigen/html_of_wiki && make -C html_of_wiki ohow
+      script: cp -r doc _doc && find _doc -name '*.wiki' -exec ./html_of_wiki/ohow.byte {} \; -exec rm {} \;
+    - stage: deploy
+      deploy:
+        provider: pages
+        keep-history: true
+        skip-cleanup: true
+        github-token: $GITHUB_TOKEN
+        on:
+          branch: master
