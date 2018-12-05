@@ -4,7 +4,7 @@ python:
     - "3.5"
     - "3.6"
 install:
-  - pip install --user -r requirements.txt
+  - pip install -r requirements.txt
   - git clone https://github.com/ocsigen/html_of_wiki && make -C html_of_wiki ohow
 script:
   - pytest
