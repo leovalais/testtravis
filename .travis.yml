@@ -1,14 +1,33 @@
 language: python
+
 python:
     - "2.7"
     - "3.5"
     - "3.6"
+
 install:
   - pip install -r requirements.txt
-  - git clone https://github.com/ocsigen/html_of_wiki && cd html_of_wiki && git checkout ohow && cd - && make -C html_of_wiki ohow
+  - apt-get install opam && opam switch 4.06.1
+  - opam install lwt.unix
+  - opam install lwt.ppx
+  - opam install re.pcre
+  - opam install tyxml
+  - opam install cmdliner
+  - opam install yojson
+  - opam install fileutils
+  - opam install uri
+  - opam install js_of_ocaml.ppx
+  - opam install js_of_ocaml-ppx_deriving_json
+  - opam install ppx_blob
+  - opam install ppx_deriving.std
+  - opam install reason
+  - opam install str
+  - ./install_ohow.sh
+
 script:
   - pytest
   - ./mkdoc.sh
+
 deploy:
   provider: pages
   keep-history: true
