@@ -13,7 +13,7 @@ addons:
 
 install:
   - pip install -r requirements.txt
-  - opam init
+  - opam init -y
   - opam switch 4.06.1
   - opam install lwt.unix
   - opam install lwt.ppx
