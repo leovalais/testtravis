@@ -5,27 +5,19 @@ python:
     - "3.5"
     - "3.6"
 
-addons:
-  apt:
-    packages:
-      - opam
-      - ocaml
+before_install:
+  - sudo apt-get update
+  - sudo apt-get install -y opam m4
 
 install:
   - pip install -r requirements.txt
   - opam init -y
   - eval $(opam config env)
-  - opam install lwt
-  - opam install re
-  - opam install tyxml
-  - opam install cmdliner
-  - opam install yojson
-  - opam install fileutils
-  - opam install uri
-  - opam install ppx_blob
-  - opam install ppx_deriving
-  - opam install reason
-  - ./install_ohow.sh
+  - git clone https://github.com/ocsigen/html_of_wiki/
+  - cd html_of_wiki
+  - git checkout opam-install
+  - cd ..
+  - opam pin add -y html_of_wiki
 
 script:
   - pytest
