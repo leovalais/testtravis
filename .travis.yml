@@ -13,7 +13,8 @@ install:
   - pip install -r requirements.txt
   - opam init -y
   - eval $(opam config env)
-  - opam pin add -y git://github.com/ocsigen/html_of_wiki#opam-install
+  - opam pin --help
+  - opam pin -y git://github.com/ocsigen/html_of_wiki#opam-install
 
 script:
   - pytest
