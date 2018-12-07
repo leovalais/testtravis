@@ -14,7 +14,7 @@ install:
   - opam init -y
   - eval $(opam config env)
   - opam pin --help
-  - opam pin -y git://github.com/ocsigen/html_of_wiki#opam-install
+  - opam pin -y html_of_wiki git://github.com/ocsigen/html_of_wiki#opam-install
 
 script:
   - pytest
