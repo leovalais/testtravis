@@ -17,3 +17,7 @@ Contains some Python math functions. Please see the full list below:
 
 == test_mymath
 Contains tests written for ##pytest## of the functions described above.
+
+Some tests are properties tests. Please see Haskell's QuickCheck for
+much more detail about that sort of tests.
+TODO: write a decorator @ptest to factorize the common parts
