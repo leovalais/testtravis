@@ -15,7 +15,7 @@ opam pin add -y html_of_wiki html_of_wiki
 wget https://raw.githubusercontent.com/ocsigen/ocsigen.github.io/e6b93e987b75be99e8ef30601460f60028c615fd/template.wiki
 
 f=$(mktemp)
-cat >f <<EOF
+cat >$f <<EOF
 {
     "api": "api",
     "menu": true,
