@@ -9,9 +9,5 @@ eval $(opam env)
 git clone -b opam-install --single-branch https://github.com/ocsigen/html_of_wiki.git
 opam pin add -y html_of_wiki html_of_wiki
 
-pwd
-ls
-ohow
-
 cp -r doc _doc
 find _doc -name '*.wiki' -exec ohow {} \; -exec rm {} \;
