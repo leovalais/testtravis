@@ -6,7 +6,7 @@ python:
     - "3.6"
 
 env:
-    - OCAML_VERSION=4.07
+    - OCAML_VERSION=4.06
 
 install:
   - pip install -r requirements.txt
