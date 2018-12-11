@@ -5,16 +5,8 @@ python:
     - "3.5"
     - "3.6"
 
-before_install:
-  - sudo apt-get update
-  - sudo apt-get install -y opam m4
-
 install:
   - pip install -r requirements.txt
-  - opam init -y
-  - eval $(opam config env)
-  - opam pin --help
-  - opam pin -y html_of_wiki git://github.com/ocsigen/html_of_wiki#opam-install
 
 script:
   - pytest
