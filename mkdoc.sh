@@ -11,4 +11,4 @@ opam pin add -y html_of_wiki html_of_wiki
 
 cp -r doc _doc
 find _doc -name '*.wiki' -exec ohow {} \; -exec rm {} \;
-ls -R doc doc_
+ls -R doc _doc
