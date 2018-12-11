@@ -25,4 +25,4 @@ cat >f <<EOF
     "images": "manual/files"
 }
 EOF
-quickdop -f doc _doc -t json -c X -viu
+quickdop -f doc _doc -t json -c $f -viu
