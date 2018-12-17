@@ -9,7 +9,7 @@ os:
     - linux
     - osx
 
-install: true
+install: 'echo installing stuff'
 script: 'echo $OCAML_VERSION $PACKAGE'
 
 jobs:
