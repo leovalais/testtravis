@@ -15,6 +15,7 @@ script: 'echo $OCAML_VERSION $PACKAGE'
 jobs:
     include:
         - stage: deploy to gh pages
+          install: true
           script:
               - ./mkdoc.sh
               - rm -rf _build __pycache__ # some cleanup
