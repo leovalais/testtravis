@@ -9,14 +9,11 @@ os:
     - linux
     - osx
 
+install: true
+script: 'echo $OCAML_VERSION $PACKAGE'
+
 jobs:
     include:
-        - stage: unit tests
-          install: 'echo install UT1'
-          script: 'echo UT1'
-        - stage: unit tests
-          install: 'echo install UT2'
-          script: 'echo UT2'
         - stage: deploy to gh pages
           script:
               - ./mkdoc.sh
