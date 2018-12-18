@@ -55,4 +55,8 @@ generator for GitHub Pages written in OCaml.
 </dd></dl><h2> test_mymath</h2><p>Contains tests written for <span class="monospace">pytest</span> of the functions described above.
 </p><p>Some tests are properties tests. Please see Haskell's QuickCheck for
 much more detail about that sort of tests.
-TODO: write a decorator @ptest to factorize the common parts</p></article></div></div></body></html>
+TODO: write a decorator @ptest to factorize the common parts
+</p><h2> Contributing</h2><p>The repo has three branches:
+</p><ul><li> <span class="monospace">master</span> — Contains the code. Travis CI <span class="teletype">pytest</span> everything.
+</li><li> <span class="monospace">wikidoc</span> — Contains the documentation. Travis CI regenerates it each time a commit is added to this branch. It uses <span class="teletype">html_of_wiki</span>.
+</li><li> <span class="monospace">gh-pages</span> — Website server (GitHub Pages). Do not touch it manually since everything can be erased.</li></ul></article></div></div></body></html>
