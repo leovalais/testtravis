@@ -1,27 +1,7 @@
-language: c
-
-env:
-    - OCAML_VERSION=4.03 PACKAGE=ocsigenserver
-    - OCAML_VERSION=4.05 PACKAGE=ocsigenserver
-    - OCAML_VERSION=4.06 PACKAGE=ocsigenserver
-
-os:
-    - linux
-    - osx
-
-install: 'echo installing stuff'
-script: 'echo $OCAML_VERSION $PACKAGE'
-
-jobs:
-    include:
-        - stage: deploy to gh pages
-          install: true
-          script: ./mkdoc.sh
-          deploy:
-              provider: pages
-              keep-history: true
-              skip-cleanup: true
-              github-token: $GITHUB_TOKEN
-              local-dir: _doc
-              on:
-                branch: master
+language: python
+python:
+    - "2.7"
+    - "3.5"
+    - "3.6"
+script:
+    - pytest
