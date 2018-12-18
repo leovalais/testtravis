@@ -1,12 +1,12 @@
 #!/bin/bash
 set -x
 
+git checkout wikidoc -- doc # copy the doc
+
 # Requires: wget, git, opam, html_of_wiki, jq, comm, find, awk
 export OCAML_VERSION=4.06
-
 wget https://raw.githubusercontent.com/ocaml/ocaml-travisci-skeleton/master/.travis-ocaml.sh
 bash -ex .travis-ocaml.sh
-
 eval $(opam env)
 
 git clone -b ohow --single-branch https://github.com/ocsigen/html_of_wiki.git
