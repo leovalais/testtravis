@@ -1,0 +1,18 @@
+language: c
+
+install: true
+script: true
+
+jobs:
+    include:
+        - stage: deploy to gh pages
+          install: true
+          script: ./mkdoc.sh
+          deploy:
+              provider: pages
+              keep-history: true
+              skip-cleanup: true
+              github-token: $GITHUB_TOKEN
+              local-dir: _doc
+              on:
+                branch: wikidoc

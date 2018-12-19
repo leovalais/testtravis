@@ -1,0 +1,29 @@
+= Test Travis CI
+
+This repository is dedicated to experimentations with [[https://travis-ci.org/|Travis CI]].
+It is also a playground for experimentations with integrating the project
+[[https://github.com/ocsigen/html_of_wiki|html_of_wiki]] to a Travis CI. It is a documentation
+generator for GitHub Pages written in OCaml.
+
+== mymath
+Contains some Python math functions. Please see the full list below:
+
+; ##fact##
+: computes the factorial
+; ##inc##
+: increments its parameter
+; ##negabs##
+: ##negabs(x) = -abs(x)##
+
+== test_mymath
+Contains tests written for ##pytest## of the functions described above.
+
+Some tests are properties tests. Please see Haskell's QuickCheck for
+much more detail about that sort of tests.
+TODO: write a decorator @ptest to factorize the common parts
+
+== Contributing
+The repo has three branches:
+* ##master## --- Contains the code. Travis CI {{{pytest}}} everything.
+* ##wikidoc## --- Contains the documentation. Travis CI regenerates it each time a commit is added to this branch. It uses {{{html_of_wiki}}}.
+* ##gh-pages## --- Website server (GitHub Pages). Do not touch it manually since everything can be erased.
